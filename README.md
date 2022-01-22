@@ -76,6 +76,54 @@ Goals:
 <details>
 <summary><b>Security</b></summary><p>
 
+## Using Amazon Cognito for serverless consumer apps
+
+In this workshop, I demonstrated end-to-end authentication and authorization using Amazon Cognito, Amazon API Gateway, AWS Lambda, and IAM.
+
+A single page React JS web app called Wild Rydes hosts the HTML, CSS, and JavaScript to render the front-end which then connects to a public serverless backend API built using Amazon API Gateway and AWS Lambda. Amazon Cognito provides user identity management and authentication functions to secure the backend API. DynamoDB provides a persistence layer where data is stored and retrieved via the API's Lambda function.
+
+---
+
+### Module 1: User flows
+
+In this module, I create an Amazon Cognito User Pool and Identity Pool for the Wild Rydes application. The Cognito User Pool will store user profile information and provide sign-up and sign-in capabilities, with the Cognito Identity Pool providing the ability to assume an Identity and Access Management (IAM) role from within the application.
+
+---
+
+1. Create an Amazon Cognito User Pool
+
+![](/images/user-pool.png)
+
+---
+
+2. Create a Cognito Identity Pool
+
+![](/images/identity-pool.png)
+
+---
+
+3. Integrate the application with Amazon Cognito
+
+Configure the application to integrate to Amazon Cognito so it can store user profiles and enable sign-up and sign-in.
+
+![](/images/amp-1.png)
+
+---
+
+![](/images/amp-2.png)
+
+If the page then loads a map, sign-in was successful and you have successfully integrated Cognito for app authentication.
+
+![](/images/auth-1.png)
+
+---
+
+Scroll down beyond the map to copy your user's identity token and decode it by pasting it into the 'encoded' input box at JWT.io . You will see all of your user's attributes are encoded within the token, along with other standard attributes such as the time the token was issued, the time the token expires, the user's unique ID, and more.
+
+![](/images/jwt.png)
+
+---
+
 </p></details>
 
 <details>
@@ -102,3 +150,7 @@ Goals:
 <summary><b>Well-Architected Partners</b></summary><p>
 
 </p></details>
+
+---
+
+**All pictured resources I created during my labs have been destroyed.**
