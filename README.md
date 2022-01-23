@@ -124,6 +124,32 @@ Scroll down beyond the map to copy your user's identity token and decode it by p
 
 ---
 
+### Lambda Triggers
+
+_Pre sign-up validation_
+Use Lambda triggers to validate the email domain of the user to ensure it's a user from an approved domain prior to allowing them to sign-up.
+
+![](/images/l-1.png)
+
+---
+
+Now that your Lambda function is configured, you can configure the trigger within your Cognito User Pool.
+
+![](/images/l-2.png)
+
+---
+
+_Customize welcome message_
+Now leverage the Custom Message trigger to customize the welcome message.
+
+![](/images/l-3.png)
+
+Now that your Lambda function is configured, you can configure the trigger within your Cognito User Pool.
+
+![](/images/l-4.png)
+
+---
+
 </p></details>
 
 <details>
