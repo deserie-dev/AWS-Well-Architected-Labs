@@ -150,6 +150,46 @@ Now that your Lambda function is configured, you can configure the trigger withi
 
 ---
 
+### Module 2: Backend authorization with Amazon API Gateway
+
+In this module, I added a serverless backend to your Wild Rydes application leveraging Amazon API Gateway and AWS Lambda . I then enable authentication and authorization on the API to secure the backend to only accept valid, authorized requests.
+
+1. Launch the Serverless API backend. Create a new WildRydes Serverless Backend stack by launching a CloudFormation stack based on the serverless-backend.yaml file in the templates folder. This WildRydes backend CloudFormation template will provision your API Gateway deployment with Lambda functions for compute, a DynamoDB database for persistence, and an S3 bucket for photo uploads which will be used in module 3.
+
+![](/images/stack3.png)
+
+---
+
+2. Integrate your API. Now that you have created our Serverless API, you need to update your Wild Rydes web application to integrate with it. You will leverage the AWS Amplify client library to make API calls and inject security seamlessly to support your authentication and authorization scenarios.
+
+![](/images/amp3.png)
+
+---
+
+3. Enable API Gateway authorization with Cognito. Amazon API Gateway can use the JSON Web tokens (JWT) returned by Cognito User Pools to authenticate API calls. In this step, you'll configure an authorizer for your API to use the user pool you created in module 1.
+
+In the Amazon API Gateway console, create a new Cognito user pool authorizer for your API. Configure it to use the user pool that you created in the previous module.
+
+![](/images/authorizer.png)
+
+---
+
+4. Deploy the API
+
+![](/images/deploy1.png)
+
+---
+
+### Module 3: Temporary AWS credentials
+
+Retrieving and using temporary AWS credentials
+
+In this module, you will expand your Wild Rydes application by enabling a profile management and profile photo management capabilities. Amazon Cognito will be used to store your user's profile information and custom attributes whereas Amazon S3 will store your user's profile pictures, with a link to the photo only being stored in the user's profile directly.
+
+1. Setup S3 bucket for use with AWS Amplify
+
+![](/images/s3-1.png)
+
 </p></details>
 
 <details>
